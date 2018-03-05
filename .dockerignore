@@ -1,3 +1,9 @@
-*
-!obj/Docker/publish/*
-!obj/Docker/empty/
+# directories
+**/bin/
+**/obj/
+**/out/
+
+# files
+Dockerfile*
+**/*.trx
+**/*.md

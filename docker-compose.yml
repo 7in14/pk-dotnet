@@ -1,8 +1,0 @@
-version: '3'
-
-services:
-  pk-dotnet:
-    image: pk-dotnet
-    build:
-      context: ./.
-      dockerfile: Dockerfile

@@ -1,4 +1,4 @@
-# pk-dotnet
+# pk-dotnet [![Build Status](https://travis-ci.org/7in14/pk-dotnet.svg?branch=master)](https://travis-ci.org/7in14/pk-dotnet)
 
 # dotnet
 
@@ -21,3 +21,14 @@ this seems to fix it temporarily:
         BuildWebHost(new string[]{}).Run();
     }
 ```
+
+# Docker
+https://docs.microsoft.com/en-us/dotnet/core/docker/building-net-docker-images
+
+# Build
+run `docker_build.sh`
+In theory that builds a production ready image with only runtime on it.
+
+
+# Run
+run `docker_run.sh`
