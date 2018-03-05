@@ -1,17 +1,35 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pk-dotnet", "pk-dotnet.csproj", "{B59FDFD5-1238-4051-BF7C-9005B9427954}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pk-dotnet", "app\pk-dotnet.csproj", "{B59FDFD5-1238-4051-BF7C-9005B9427954}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app.tests", "app.tests\app.tests.csproj", "{93000E69-0391-4D68-A52A-B36BAD516A2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B59FDFD5-1238-4051-BF7C-9005B9427954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B59FDFD5-1238-4051-BF7C-9005B9427954}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B59FDFD5-1238-4051-BF7C-9005B9427954}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B59FDFD5-1238-4051-BF7C-9005B9427954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93000E69-0391-4D68-A52A-B36BAD516A2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93000E69-0391-4D68-A52A-B36BAD516A2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93000E69-0391-4D68-A52A-B36BAD516A2A}.Debug|x64.ActiveCfg = Debug|x64
+		{93000E69-0391-4D68-A52A-B36BAD516A2A}.Debug|x64.Build.0 = Debug|x64
+		{93000E69-0391-4D68-A52A-B36BAD516A2A}.Debug|x86.ActiveCfg = Debug|x86
+		{93000E69-0391-4D68-A52A-B36BAD516A2A}.Debug|x86.Build.0 = Debug|x86
+		{93000E69-0391-4D68-A52A-B36BAD516A2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93000E69-0391-4D68-A52A-B36BAD516A2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93000E69-0391-4D68-A52A-B36BAD516A2A}.Release|x64.ActiveCfg = Release|x64
+		{93000E69-0391-4D68-A52A-B36BAD516A2A}.Release|x64.Build.0 = Release|x64
+		{93000E69-0391-4D68-A52A-B36BAD516A2A}.Release|x86.ActiveCfg = Release|x86
+		{93000E69-0391-4D68-A52A-B36BAD516A2A}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal

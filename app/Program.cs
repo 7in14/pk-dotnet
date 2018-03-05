@@ -9,6 +9,7 @@ namespace pk_dotnet
         public static void Main(string[] args)
         {
 			Console.WriteLine("args: "+ string.Join(",", args));
+            // OSX dotnet core doesn't like where first param is the name of the sln file :/
 			BuildWebHost(new string[]{}).Run();
         }
 
