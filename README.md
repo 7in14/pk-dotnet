@@ -1,4 +1,5 @@
 # pk-dotnet [![Build Status](https://travis-ci.org/7in14/pk-dotnet.svg?branch=master)](https://travis-ci.org/7in14/pk-dotnet)
+Sample API created with dotnet core
 
 # dotnet
 
@@ -32,3 +33,47 @@ In theory that builds a production ready image with only runtime on it.
 
 # Run
 run `docker_run.sh`
+
+# API
+## file
+```
+$ curl .:8080/api/ping
+```
+
+## ping
+```
+$ curl .:8080/api/ping
+```
+
+## Read all data sources
+```
+$ curl .:8080/api/dataSources
+```
+
+## Read one data source
+```
+$ curl .:8080/api/dataSource/[guid]
+```
+
+## Delete data source
+```
+$ curl -X 'DELETE' .:8080/api/dataSource/[guid]
+```
+## Add data source
+```
+$ curl -X 'PUT' .:8080/api/dataSource -d '{"name":"new", "url":"http://google.com"}' -H 'content-type: application/json'
+```
+
+## Get crimes
+```
+curl ".:8080/api/raleigh/crime?query=Drug"
+```
+
+## Get all data - from data sources
+```
+curl .:8080/api/allData
+```
+
+## License
+
+MIT
