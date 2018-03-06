@@ -10,22 +10,18 @@ namespace pkdotnet
 	[Route("api/[controller]")]
 	public class FileController : Controller
 	{
-		private readonly IHostingEnvironment _hostingEnvironment;
+		readonly string _contentRootPath;
 
 		public FileController(IHostingEnvironment hostingEnvironment)
         {
-            _hostingEnvironment = hostingEnvironment;
+			_contentRootPath = hostingEnvironment.ContentRootPath;
         }
 
 		// GET: /api/file
 		[HttpGet]
 		public async Task<string> Get()
 		{
-			string webRootPath = _hostingEnvironment.WebRootPath;
-			string contentRootPath = _hostingEnvironment.ContentRootPath;
-			System.Console.WriteLine($"webRoot: {webRootPath} contentRoot: {contentRootPath}");
-			var path = Path.Combine(contentRootPath, "../README.md");
-
+			var path = Path.Combine(_contentRootPath, "../README.md");
 			return await System.IO.File.ReadAllTextAsync(path);
 		}
 	}
