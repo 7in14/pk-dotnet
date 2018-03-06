@@ -16,7 +16,4 @@
     <ProjectReference Include="..\app\pk-dotnet.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Remove="UnitTest1.cs" />
-  </ItemGroup>
 </Project>
