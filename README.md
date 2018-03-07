@@ -23,6 +23,15 @@ this seems to fix it temporarily:
     }
 ```
 
+## run project with watch
+https://docs.microsoft.com/en-us/aspnet/core/tutorials/dotnet-watch
+
+MS went back and forth with `project.json` vs. *.csproj. Looks like we're back with *.csproj. Most tutorials still refer to `project.json`.
+To install `dotnet watch`:
+* add `<DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="2.0.0" />` in *.csproj file
+* `cd webapp`
+* `dotnet watch run` or `dotnet watch test`
+
 # Docker
 https://docs.microsoft.com/en-us/dotnet/core/docker/building-net-docker-images
 
