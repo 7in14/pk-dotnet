@@ -16,4 +16,7 @@
     <ProjectReference Include="..\app\pk-dotnet.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Tools\" />
+  </ItemGroup>
 </Project>

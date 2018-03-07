@@ -4,3 +4,4 @@ dotnet: 2.1.4
 script:
  - dotnet restore
  - dotnet test app.tests
+ - dotnet test app.integration.tests
