@@ -3,4 +3,4 @@ mono: none
 dotnet: 2.1.4
 script:
  - chmod +x ./tools/cover.sh
- - ./tools/cover
+ - ./tools/cover.sh
