@@ -11,18 +11,18 @@ namespace pkdotnet.Controllers
 	[Route("api/raleigh/[controller]")]
 	public class CrimeController : Controller
 	{
-		private Lazy<ApiClient> _apiClient = new Lazy<ApiClient>();
+        public ApiClient ApiClient { get;}
 
-		public Lazy<ApiClient> Client
-		{
-			set { _apiClient = value; }
-		}
+        public CrimeController(ApiClient apiClient) 
+        {
+            ApiClient = apiClient;
+        }
 
 		// GET: /api/file
 		[HttpGet]
 		public async Task<List<Crime>> Get(string query=null)
 		{
-			var crimesJson = await _apiClient.Value.GetDataFromInternetAsync("https://data.raleighnc.gov/resource/3bhm-we7a.json");
+			var crimesJson = await ApiClient.GetDataFromInternetAsync("https://data.raleighnc.gov/resource/3bhm-we7a.json");
 			var crimes = JsonConvert.DeserializeObject<List<Crime>>(crimesJson);
 
 			if (string.IsNullOrWhiteSpace(query))

@@ -25,9 +25,8 @@ namespace app.tests.Controllers
 
 		public CrimeControllerTests()
 		{
-			_target = new CrimeController();
-			_apiClientMock = new ApiClientMock();
-			_target.Client = new System.Lazy<ApiClient>(() => _apiClientMock);
+            _apiClientMock = new ApiClientMock();
+            _target = new CrimeController(_apiClientMock);
 			_apiClientMock.Operations.Add("https://data.raleighnc.gov/resource/3bhm-we7a.json", () => _json);
 		}
 
