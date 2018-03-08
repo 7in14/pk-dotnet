@@ -3,11 +3,11 @@ WORKDIR /dotnetapp
 
 # copy csproj and restore as distinct layers
 COPY *.sln .
-COPY app/*.csproj ./app/
+COPY src/app/*.csproj ./app/
 RUN dotnet restore
 
 # copy everything else and build app
-COPY app/. ./app/
+COPY src/app/. ./app/
 WORKDIR /dotnetapp/app
 RUN dotnet publish -o out /p:PublishWithAspNetCoreTargetManifest="false"
 

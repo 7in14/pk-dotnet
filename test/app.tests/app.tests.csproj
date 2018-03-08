@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\app\pk-dotnet.csproj" />
+    <ProjectReference Include="..\..\src\app\pk-dotnet.csproj" />
   </ItemGroup>
 
   <ItemGroup>

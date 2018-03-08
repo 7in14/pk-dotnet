@@ -13,7 +13,7 @@ namespace pkdotnet.Controllers
 	{
         public ApiClient ApiClient { get;}
 
-        public CrimeController(ApiClient apiClient) 
+        public CrimeController(ApiClient apiClient)
         {
             ApiClient = apiClient;
         }

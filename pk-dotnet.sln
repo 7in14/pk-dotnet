@@ -1,13 +1,11 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pk-dotnet", "app\pk-dotnet.csproj", "{B59FDFD5-1238-4051-BF7C-9005B9427954}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pk-dotnet", "src\app\pk-dotnet.csproj", "{B59FDFD5-1238-4051-BF7C-9005B9427954}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app.tests", "app.tests\app.tests.csproj", "{93000E69-0391-4D68-A52A-B36BAD516A2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app.tests", "test\app.tests\app.tests.csproj", "{93000E69-0391-4D68-A52A-B36BAD516A2A}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-.,}") = "docker-compose", "docker-compose.dcproj", "{20136459-A66D-476A-BFEA-6211DBA29769}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app.integration.tests", "app.integration.tests\app.integration.tests.csproj", "{8A9B52E4-42B6-4415-BD7B-6C8DFD740A6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app.integration.tests", "test\app.integration.tests\app.integration.tests.csproj", "{8A9B52E4-42B6-4415-BD7B-6C8DFD740A6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
