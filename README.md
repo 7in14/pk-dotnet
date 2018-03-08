@@ -86,3 +86,10 @@ curl .:8080/api/allData
 ## License
 
 MIT
+
+## Todo
+* Use http://tmenier.github.io/Flurl/testable-http/ for HTTP calls and testing
+* Add middleware for request/response logging https://gist.github.com/dazinator/98b2cf4c99e7182b1e11fc4695cadaed or https://blog.getseq.net/smart-logging-middleware-for-asp-net-core/
+ * and use https://github.com/tomakita/Colorful.Console
+* setup code coverage https://github.com/lucaslorentz/minicover
+* use moq for mocking https://github.com/Moq/moq4
