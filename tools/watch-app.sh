@@ -1,3 +1,2 @@
-cd ../src/app/
 export ASPNETCORE_ENVIRONMENT=Development
-dotnet watch run
+dotnet watch run -p ../src/app/pk-dotnet.csproj

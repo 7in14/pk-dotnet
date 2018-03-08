@@ -1,3 +1,2 @@
-cd ../test/
 export ASPNETCORE_ENVIRONMENT=Development
-dotnet watch test
+dotnet watch -p ../test/app.tests/app.tests.csproj test
