@@ -7,10 +7,10 @@ Sample API created with dotnet core
 project created with `dotnet new webapi`
 
 ## build project
-`dotnet build pk-dotnet.sln`
+`dotnet build`
 
 ## run project
-Should be `dotnet run pk-dotnet.sln` but there's an issue with `args`, apparently the param that OSX is providing is not ok.
+Should be `dotnet run` but there's an issue with `args`, apparently the param that OSX is providing is not ok.
 ```
 Unhandled Exception: System.FormatException: Unrecognized argument format: 'pk-dotnet.sln'.
    at Microsoft.Extensions.Configuration.CommandLine.CommandLineConfigurationProvider.Load()
@@ -23,14 +23,25 @@ this seems to fix it temporarily:
     }
 ```
 
+### Run in Development
+```
+$ export ASPNETCORE_ENVIRONMENT=Development
+$ dotnet run
+```
+
+### Run in Production
+```
+$ export ASPNETCORE_ENVIRONMENT=Production
+$ dotnet run
+```
+
 ## run project with watch
 https://docs.microsoft.com/en-us/aspnet/core/tutorials/dotnet-watch
 
-MS went back and forth with `project.json` vs. *.csproj. Looks like we're back with *.csproj. Most tutorials still refer to `project.json`.
+MS went back and forth with `project.json` vs. `*.csproj`. Looks like we're back with `*.csproj`. Most tutorials still refer to `project.json`.
 To install `dotnet watch`:
-* add `<DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="2.0.0" />` in *.csproj file
-* `cd webapp`
-* `dotnet watch run` or `dotnet watch test`
+* add `<DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="2.0.0" />` in `*.csproj` file (preferably tools project)
+* run `./tools/coverage`
 
 # Docker
 https://docs.microsoft.com/en-us/dotnet/core/docker/building-net-docker-images

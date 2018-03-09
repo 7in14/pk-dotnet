@@ -21,7 +21,7 @@ namespace pkdotnet.Controllers
 		[HttpGet]
 		public async Task<string> Get()
 		{
-			var path = Path.Combine(_contentRootPath, "../README.md");
+			var path = Path.Combine(_contentRootPath, "../../README.md");
 			return await System.IO.File.ReadAllTextAsync(path);
 		}
 	}
