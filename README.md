@@ -108,5 +108,4 @@ MIT
 ## Todo
 * Log on disposse? https://gist.github.com/dazinator/98b2cf4c99e7182b1e11fc4695cadaed
 * Use http://tmenier.github.io/Flurl/testable-http/ for HTTP calls and testing
-* setup 
 * use moq for mocking https://github.com/Moq/moq4
