@@ -18,9 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Tools\" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Remove="Controllers\CrimeControllerTests.cs" />
+    <Compile Remove="Tools\ApiClientMock.cs" />
   </ItemGroup>
 </Project>

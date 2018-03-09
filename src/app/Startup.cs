@@ -18,7 +18,6 @@ namespace pkdotnet
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddSingleton<ApiClient>();
             services.AddSingleton<DataAccess.MongoAccess>();
         }
 

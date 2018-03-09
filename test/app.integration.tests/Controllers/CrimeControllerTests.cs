@@ -51,5 +51,25 @@ namespace app.integration.tests
 				httpTest.ShouldHaveCalled("https://data.raleighnc.gov/resource/3bhm-we7a.json");
 			}
 		}
+
+		[TestMethod]
+		public async Task Should_Return_CrimesFromRaleighOpenData_When_Filtered()
+		{
+			using (var httpTest = new Flurl.Http.Testing.HttpTest())
+			{
+				// Arrange
+				httpTest.RespondWith(_json);
+
+				// Act
+				var response = await _client.GetAsync("/api/raleigh/crime?query=Drug");
+				response.EnsureSuccessStatusCode();
+				var responseString = await response.Content.ReadAsStringAsync();
+
+				// Assert
+				Assert.IsFalse(responseString.Contains("Traffic/DWI (Driving While Impaired)"), "Filtered list should not have Traffic/DWI");
+				Assert.IsTrue(responseString.Contains("Drug Violation/Misdemeanor"), "Fitered list should only have Drug crimes");
+				httpTest.ShouldHaveCalled("https://data.raleighnc.gov/resource/3bhm-we7a.json");
+			}
+		}
 	}
 }
