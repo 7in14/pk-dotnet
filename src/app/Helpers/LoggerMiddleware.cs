@@ -10,9 +10,6 @@ namespace pkdotnet
 {
 	public class LoggerMiddleware
 	{
-		const string MessageTemplate =
-			"HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms";
-
 		readonly RequestDelegate _next;
 
 		public LoggerMiddleware(RequestDelegate next)
@@ -24,18 +21,18 @@ namespace pkdotnet
 		{
 			if (httpContext == null) throw new ArgumentNullException(nameof(httpContext));
 
-			var sw = Stopwatch.StartNew();
+			var start = Stopwatch.GetTimestamp();
 			try
 			{
 				await _next(httpContext);
-				sw.Stop();
-				LogRequestInColor(httpContext, sw);
+				var elapsedMs = GetElapsedMilliseconds(start, Stopwatch.GetTimestamp());
+				LogRequestInColor(httpContext, elapsedMs);
 			}
 			// Never caught, because `LogException()` returns false.
-			catch (Exception ex) when (LogRequestInColor(httpContext, sw, ex)) { }
+			catch (Exception ex) when (LogRequestInColor(httpContext, GetElapsedMilliseconds(start, Stopwatch.GetTimestamp()), ex)) { }
 		}
 
-		static bool LogRequestInColor(HttpContext httpContext, Stopwatch sw, Exception ex = null)
+		static bool LogRequestInColor(HttpContext httpContext, double elapsedMs, Exception ex = null)
 		{
 			var request = httpContext.Request;
 			var statusCode = httpContext.Response?.StatusCode;
@@ -46,7 +43,7 @@ namespace pkdotnet
 				new Formatter(request.Method, Color.Green),
 				new Formatter(request.Path, Color.Blue),
 				new Formatter(statusCode, Color.Orange),
-				new Formatter(string.Format("{0:0.0000}",sw.Elapsed.TotalMilliseconds), Color.Yellow)
+				new Formatter(string.Format("{0:0.0000}",elapsedMs), Color.Yellow)
 			};
 
 			Colorful.Console.WriteLineFormatted(pattern, Color.Gray, requestProps);
@@ -74,6 +71,11 @@ namespace pkdotnet
 			}
 
 			return false;
+		}
+
+		static double GetElapsedMilliseconds(long start, long stop)
+		{
+			return (stop - start) * 1000 / (double)Stopwatch.Frequency;
 		}
 	}
 
