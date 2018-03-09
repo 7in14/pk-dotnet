@@ -31,7 +31,7 @@ namespace pkdotnet
             }
 
 			app.UseMiddleware<LoggerMiddleware>();
-
+			app.UseMiddleware<ErrorHandlingMiddleware>();
             app.UseMvc();
         }
     }

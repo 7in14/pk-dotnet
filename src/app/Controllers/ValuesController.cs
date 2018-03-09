@@ -13,6 +13,7 @@ namespace pk_dotnet.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
+			throw new InvalidOperationException("Something went wrong");
             return new string[] { "value1", "value2" };
         }
 
