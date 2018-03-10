@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app.integration.tests", "te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tools", "tools\tools.csproj", "{E8F5BAE8-8296-4C87-8CE1-E0A555C9B4C5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1110C91C-CC69-4F14-A3F2-BF001AE7D36D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{5A6A1E44-2C21-4118-A82D-086438080C11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,5 +63,10 @@ Global
 		{E8F5BAE8-8296-4C87-8CE1-E0A555C9B4C5}.Release|x64.Build.0 = Release|x64
 		{E8F5BAE8-8296-4C87-8CE1-E0A555C9B4C5}.Release|x86.ActiveCfg = Release|x86
 		{E8F5BAE8-8296-4C87-8CE1-E0A555C9B4C5}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8A9B52E4-42B6-4415-BD7B-6C8DFD740A6F} = {1110C91C-CC69-4F14-A3F2-BF001AE7D36D}
+		{93000E69-0391-4D68-A52A-B36BAD516A2A} = {1110C91C-CC69-4F14-A3F2-BF001AE7D36D}
+		{E8F5BAE8-8296-4C87-8CE1-E0A555C9B4C5} = {5A6A1E44-2C21-4118-A82D-086438080C11}
 	EndGlobalSection
 EndGlobal
