@@ -31,7 +31,7 @@ namespace pkdotnet
 		{
 			var code = HttpStatusCode.InternalServerError; // 500 if unexpected
 
-			//if (exception is MyNotFoundException) code = HttpStatusCode.NotFound;
+			if (exception is NotFoundException) code = HttpStatusCode.NotFound;
 			//else if (exception is MyUnauthorizedException) code = HttpStatusCode.Unauthorized;
 			//else if (exception is MyException) code = HttpStatusCode.BadRequest;
 

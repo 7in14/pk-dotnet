@@ -20,20 +20,39 @@ namespace pkdotnet.DataAccess
 
         public virtual async Task<List<DataSource>> GetAll()
         {
-            List<DataSource> result = new List<DataSource>();
+			var collection = _db.GetCollection<DataSource>("dataSources");
 
-            using (var cursor = await _db.GetCollection<DataSource>("dataSources").FindAsync(new BsonDocument()))
-            {
-
-                while (await cursor.MoveNextAsync())
-                {
-
-                    var batch = cursor.Current;
-                    result.AddRange(batch);
-                }
-            }
-
-            return result;
+			return await collection.Find(new BsonDocument()).ToListAsync();
         }
+
+		public virtual async Task<DataSource> GetOne(string id)
+		{
+			var collection = _db.GetCollection<DataSource>("dataSources");
+
+			FilterDefinition<DataSource> filter = new BsonDocument("_id", new ObjectId(id));
+			return await collection.Find(filter).FirstOrDefaultAsync();
+		}
+
+		public virtual async Task<bool> DeleteOne(string id)
+		{
+			var collection = _db.GetCollection<DataSource>("dataSources");
+
+			FilterDefinition<DataSource> filter = new BsonDocument("_id", new ObjectId(id));
+			var result = await collection.DeleteOneAsync(filter);
+			return result.DeletedCount == 1;
+		}
+
+		public virtual async Task<DataSource> AddOne(DataSource ds)
+		{
+			var collection = _db.GetCollection<DataSource>("dataSources");
+
+			await collection.InsertOneAsync(ds);
+			return ds;
+		}
+
+		public virtual bool IsValidObjectId(string id) {
+			ObjectId objectId;
+			return ObjectId.TryParse(id, out objectId);
+		}
     }
 }

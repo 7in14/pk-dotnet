@@ -4,19 +4,19 @@ using Microsoft.AspNetCore.Mvc;
 using pkdotnet.DataAccess;
 using pkdotnet.Models;
 
-namespace pk_dotnet.Controllers
+namespace pkdotnet.Controllers
 {
     [Route("api/[controller]")]
     public class DataSourcesController : Controller
     {
-        private readonly MongoAccess mongoAccess;
+		readonly MongoAccess mongoAccess;
 
-        public DataSourcesController(MongoAccess mongoAccess)
+		public DataSourcesController(MongoAccess mongoAccess)
         {
             this.mongoAccess = mongoAccess;
         }
 
-        // GET api/dataSources
+		// GET api/dataSources
         [HttpGet]
         public async Task<List<DataSource>> Get()
         {

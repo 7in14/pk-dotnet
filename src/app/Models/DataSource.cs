@@ -4,7 +4,8 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace pkdotnet.Models
 {
     public class DataSource
-    {
+	{
+		[BsonIgnoreIfNull]
         [BsonElement("_id")]
         public ObjectId Id { get; set; }
 
