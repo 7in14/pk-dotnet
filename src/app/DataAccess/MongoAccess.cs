@@ -9,10 +9,10 @@ namespace pkdotnet.DataAccess
 {
     public class MongoAccess
     {
-        private readonly MongoClient _client;
-        private readonly IMongoDatabase _db;
+		readonly MongoClient _client;
+		readonly IMongoDatabase _db;
 
-        public MongoAccess(IConfiguration configuration)
+		public MongoAccess(IConfiguration configuration)
         {
             _client = new MongoClient(configuration["db:connectionString"]);
             _db = _client.GetDatabase(configuration["db:name"]);
@@ -48,11 +48,6 @@ namespace pkdotnet.DataAccess
 
 			await collection.InsertOneAsync(ds);
 			return ds;
-		}
-
-		public virtual bool IsValidObjectId(string id) {
-			ObjectId objectId;
-			return ObjectId.TryParse(id, out objectId);
 		}
     }
 }

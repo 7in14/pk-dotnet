@@ -8,7 +8,7 @@ namespace pkdotnet
 {
 	public class ErrorHandlingMiddleware
 	{
-		private readonly RequestDelegate next;
+		readonly RequestDelegate next;
 
 		public ErrorHandlingMiddleware(RequestDelegate next)
 		{

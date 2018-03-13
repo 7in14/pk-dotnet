@@ -30,7 +30,6 @@ namespace pkdotnet.Controllers
         }
 
 		// DELETE api/dataSource/{id}
-		//{ssn:regex(^\\d{ { 3} }-\\d{{2}}-\\d{{4}}$)}
 		[HttpDelete("{id:regex(^[[a-f\\d]]{{24}}$)}")]
 		public async Task<IActionResult> Delete(string id)
 		{
