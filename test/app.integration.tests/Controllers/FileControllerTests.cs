@@ -18,7 +18,6 @@ namespace app.integration.tests.Controllers
 
 		public FileControllerTests()
 		{
-			/// Users / piotrkarpala / projects / 7in14 / pk - dotnet / app
 			string s = Assembly.GetExecutingAssembly().CodeBase;
 			s = (new Uri(s)).AbsolutePath;
 			var contentRoot = Path.Combine(Path.GetDirectoryName(s), "../../../../../src/app");

@@ -16,7 +16,7 @@ using pkdotnet.Models;
 namespace app.integration.tests.Controllers
 {
 	[TestClass]
-	public class DataSourcesControllerTests
+	public class DataSourceControllerTests
 	{
 		private static readonly Mock<IConfiguration> configMock = new Mock<IConfiguration>();
 		private static readonly Mock<MongoAccess> dataSourceMock = new Mock<MongoAccess>(configMock.Object);
@@ -34,36 +34,40 @@ namespace app.integration.tests.Controllers
 			}
 		}
 
-		private readonly TestServer _server;
-		private readonly HttpClient _client;
+		private TestServer _server;
+		private HttpClient _client;
 
-		public DataSourcesControllerTests()
+		[TestInitialize]
+		public void Initialize()
 		{
 			// Arrange
+			dataSourceMock.Reset();
 			_server = new TestServer(new WebHostBuilder()
 				.UseStartup<TestStartup>());
 			_client = _server.CreateClient();
 		}
 
 		[TestMethod]
-		public async Task DataSources_Should_ReturnAList()
+		public async Task DataSourceById_Should_Return404_When_NotFound()
 		{
 			// Arrange
-			dataSourceMock.Setup(ma => ma.GetAll())
-			  .ReturnsAsync(() => new List<DataSource>(){
-								new DataSource() {
-										Id = new MongoDB.Bson.ObjectId(),
-										Name = "test data",
-										Url = "http://test-data.com" }
-			});
+			const string id = "5a9393c8f055e1b7da739d09";
+			dataSourceMock.Setup(ma => ma.GetOne(id))
+			  .ReturnsAsync(() => new DataSource()
+			  {
+				  Id = new MongoDB.Bson.ObjectId(id),
+				  Name = "test data",
+				  Url = "http://test-data.com"
+			  });
 
 			// Act
-			var response = await _client.GetAsync("/api/dataSources");
+			var response = await _client.GetAsync($"/api/dataSource/{id}");
 			response.EnsureSuccessStatusCode();
 			var responseString = await response.Content.ReadAsStringAsync();
 
 			// Assert
 			Assert.IsTrue(responseString.Contains("http://test-data.com"));
+			Assert.IsTrue(responseString.Contains(id));
 		}
 	}
 }

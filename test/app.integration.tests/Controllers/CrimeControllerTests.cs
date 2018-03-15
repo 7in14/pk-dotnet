@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.TestHost;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using pkdotnet;
 
-namespace app.integration.tests
+namespace app.integration.tests.Controllers
 {
 	[TestClass]
 	public class CrimeControllerTests
@@ -29,7 +29,7 @@ namespace app.integration.tests
 		{
 			// Arrange
 			_server = new TestServer(new WebHostBuilder()
-									 .UseStartup<Startup>());
+				.UseStartup<Startup>());
 			_client = _server.CreateClient();
 		}
 

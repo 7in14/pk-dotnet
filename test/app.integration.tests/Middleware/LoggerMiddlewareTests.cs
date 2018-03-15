@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.TestHost;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using pkdotnet;
 
-namespace app.integration.tests
+namespace app.integration.tests.Middleware
 {
 	[TestClass]
 	public class LoggerMiddlewareTests
