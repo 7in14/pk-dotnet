@@ -8,7 +8,7 @@ using pkdotnet.Models;
 
 namespace pkdotnet.DataAccess
 {
-    public class MongoAccess
+	public class MongoAccess
     {
 		readonly Lazy<MongoClient> _client;
 		readonly Lazy<IMongoDatabase> _db;

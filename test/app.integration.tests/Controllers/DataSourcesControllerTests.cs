@@ -1,16 +1,15 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using pkdotnet.DataAccess;
-using Moq;
-using Microsoft.AspNetCore.TestHost;
-using Microsoft.AspNetCore.Hosting;
+﻿using System.Collections.Generic;
 using System.Net.Http;
-using pkdotnet;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using pkdotnet;
+using pkdotnet.DataAccess;
 using pkdotnet.Models;
 
 namespace app.integration.tests.Controllers
