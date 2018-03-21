@@ -12,7 +12,7 @@ namespace pkdotnet.Controllers
 	{
 		// GET: /api/raleigh/crime
 		[HttpGet]
-		public async Task<List<Crime>> Get(string query=null)
+		public async Task<List<Crime>> Get(string query = null)
 		{
 			var crimes = await "https://data.raleighnc.gov/resource/3bhm-we7a.json".GetJsonAsync<List<Crime>>();
 

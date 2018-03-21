@@ -64,41 +64,41 @@ See `tools/cover.sh`
 # API
 ## file
 ```
-$ curl .:8080/api/ping
+$ curl .:5000/api/ping
 ```
 
 ## ping
 ```
-$ curl .:8080/api/ping
+$ curl .:5000/api/ping
 ```
 
 ## Read all data sources
 ```
-$ curl .:8080/api/dataSources
+$ curl .:5000/api/dataSources
 ```
 
 ## Read one data source
 ```
-$ curl .:8080/api/dataSource/[guid]
+$ curl .:5000/api/dataSource/[guid]
 ```
 
 ## Delete data source
 ```
-$ curl -X 'DELETE' .:8080/api/dataSource/[guid]
+$ curl -X 'DELETE' .:5000/api/dataSource/[guid]
 ```
 ## Add data source
 ```
-$ curl -X 'PUT' .:8080/api/dataSource -d '{"name":"new", "url":"http://google.com"}' -H 'content-type: application/json'
+$ curl -X 'PUT' .:5000/api/dataSource -d '{"name":"new", "url":"http://google.com"}' -H 'content-type: application/json'
 ```
 
 ## Get crimes
 ```
-curl ".:8080/api/raleigh/crime?query=Drug"
+curl ".:5000/api/raleigh/crime?query=Drug"
 ```
 
 ## Get all data - from data sources
 ```
-curl .:8080/api/allData
+curl .:5000/api/allData
 ```
 
 ## License
